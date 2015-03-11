@@ -52,6 +52,8 @@
 		A0A194CC1AAE8F840094CD37 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A194CB1AAE8F840094CD37 /* Color.swift */; };
 		A0A194CF1AAE90E50094CD37 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A194CE1AAE90E50094CD37 /* Constants.swift */; };
 		A0B969B71AAE9FD400AC2230 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B969B61AAE9FD400AC2230 /* UserDefaults.swift */; };
+		A0D1CC751AAF81890091DC9A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D1CC741AAF81890091DC9A /* libsqlite3.dylib */; };
+		A0D1CC771AAF819D0091DC9A /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D1CC761AAF819D0091DC9A /* libsqlite3.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,8 @@
 		A0A194CB1AAE8F840094CD37 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A0A194CE1AAE90E50094CD37 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A0B969B61AAE9FD400AC2230 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		A0D1CC741AAF81890091DC9A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		A0D1CC761AAF819D0091DC9A /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0D1CC771AAF819D0091DC9A /* libsqlite3.0.dylib in Frameworks */,
+				A0D1CC751AAF81890091DC9A /* libsqlite3.dylib in Frameworks */,
 				A03D20D91AAE72BA00D1D2E5 /* AudioToolbox.framework in Frameworks */,
 				A03D20D71AAE72AE00D1D2E5 /* Foundation.framework in Frameworks */,
 				A03D20D51AAE72A100D1D2E5 /* CoreGraphics.framework in Frameworks */,
@@ -220,8 +226,8 @@
 				A03D20DA1AAE766100D1D2E5 /* LandingVC.swift */,
 				A02293DD1AAEB2E300EFCF60 /* OnboardVC.swift */,
 				A02293E51AAEDBE100EFCF60 /* VerifyDeviceVC.swift */,
-				A03D20DC1AAE770100D1D2E5 /* SignInVC.swift */,
 				A02293E31AAED90900EFCF60 /* SignUpVC.swift */,
+				A03D20DC1AAE770100D1D2E5 /* SignInVC.swift */,
 				A03D20981AAE5AB600D1D2E5 /* Main.storyboard */,
 				A03D209B1AAE5AB600D1D2E5 /* Images.xcassets */,
 				A03D209D1AAE5AB600D1D2E5 /* LaunchScreen.xib */,
@@ -258,6 +264,8 @@
 		A03D20B51AAE620C00D1D2E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0D1CC761AAF819D0091DC9A /* libsqlite3.0.dylib */,
+				A0D1CC741AAF81890091DC9A /* libsqlite3.dylib */,
 				A03D20D81AAE72BA00D1D2E5 /* AudioToolbox.framework */,
 				A03D20D61AAE72AE00D1D2E5 /* Foundation.framework */,
 				A03D20D41AAE72A100D1D2E5 /* CoreGraphics.framework */,

@@ -3,6 +3,7 @@
 //  Copyright (c) 2015 jlynch.co. All rights reserved.
 
 import UIKit
+import Parse
 
 protocol OnboardVCDelegate : class {
     func acceptData(data: AnyObject!)
@@ -75,6 +76,5 @@ class OnboardVC: UIViewController {
         Defaults[hasOnboardedKey] = true
         self.presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
     }
-    
     
 }

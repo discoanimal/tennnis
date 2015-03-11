@@ -3,6 +3,9 @@
 //  Copyright (c) 2015 jlynch.co. All rights reserved.
 
 import UIKit
+import Parse
+import TwitterKit
+import Foundation
 
 class LandingVC: UIViewController, SignInVCDelegate, SignUpVCDelegate, OnboardVCDelegate, VerifyDeviceVCDelegate {
     
@@ -14,10 +17,11 @@ class LandingVC: UIViewController, SignInVCDelegate, SignUpVCDelegate, OnboardVC
     let vdvc = VerifyDeviceVC()
     let suvc = SignUpVC()
     let onboardvc = OnboardVC()
+    var currentUser = PFUser.currentUser()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.checkIfCurrentUserReal()
         self.setUpButtons()
         view.backgroundColor = UIColor.Tennnis.backgroundBlue
         self.navigationController?.navigationBar.hideBottomHairline()
@@ -30,6 +34,37 @@ class LandingVC: UIViewController, SignInVCDelegate, SignUpVCDelegate, OnboardVC
 
     }
     
+    func checkIfCurrentUserReal() {
+        if currentUser != nil {
+            if PFAnonymousUtils.isLinkedWithUser(currentUser) {
+                println("Current User is Anonomous User")
+                
+            } else {
+                println("Current User Regular User")
+                
+                
+            }
+        } else {
+            println("Current User does not exist")
+        }
+    }
+    
+    
+    
+    
+//    func signInExistingUser() {
+//        PFUser.logInWithUsernameInBackground("myname", password:"mypass") {
+//            (user: PFUser!, error: NSError!) -> Void in
+//            if user != nil {
+//                println("Successfully Signed In")
+//            } else {
+//                println("Error Signing In")
+//            }
+//        }
+//        
+//    }
+    
+    
     override func viewWillAppear(animated: Bool) {
         var attributes = [ NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Avenir", size: 18)! ]
         self.navigationController?.navigationBar.titleTextAttributes = attributes
@@ -39,6 +74,7 @@ class LandingVC: UIViewController, SignInVCDelegate, SignUpVCDelegate, OnboardVC
             if Defaults.hasKey(hasVerifiedDeviceKey) {
                 if Defaults.hasKey(hasSignedUpKey) {
                     if Defaults.hasKey(hasActiveSessionKey) {
+                        println("signed in")
                     } else {
                         self.presentSignInVC(self.tabBarController)
                     }
@@ -54,45 +90,53 @@ class LandingVC: UIViewController, SignInVCDelegate, SignUpVCDelegate, OnboardVC
     }
     
     func setUpButtons() {
-        var removeOnboardButton = UIButton(frame: CGRectMake(0, screenHeight / 4, screenWidth, bHeight))
-        var removeVerifyButton = UIButton(frame: CGRectMake(0, screenHeight / 4 + bHeight, screenWidth, bHeight))
-        var removeSignUpButton = UIButton(frame: CGRectMake(0, screenHeight / 4 + 2 * bHeight, screenWidth, bHeight))
-        var removeSignInButton = UIButton(frame: CGRectMake(0, screenHeight / 4 + 3 * bHeight, screenWidth, bHeight))
+        var removeOnboardButton = UIButton(frame: CGRectMake(0, screenHeight / 5, screenWidth, bHeight))
+        var removeVerifyButton = UIButton(frame: CGRectMake(0, screenHeight / 5 + bHeight, screenWidth, bHeight))
+        var removeSignUpButton = UIButton(frame: CGRectMake(0, screenHeight / 5 + 2 * bHeight, screenWidth, bHeight))
+        var removeSignInButton = UIButton(frame: CGRectMake(0, screenHeight / 5 + 3 * bHeight, screenWidth, bHeight))
+        var removeAllButton = UIButton(frame: CGRectMake(0, screenHeight / 5 + 4 * bHeight, screenWidth, bHeight))
         
         removeOnboardButton.titleLabel!.font = midFont
         removeVerifyButton.titleLabel!.font = midFont
         removeSignUpButton.titleLabel!.font = midFont
         removeSignInButton.titleLabel!.font = midFont
+        removeAllButton.titleLabel!.font = midFont
         
         removeOnboardButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         removeVerifyButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         removeSignUpButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         removeSignInButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        removeAllButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         
         removeOnboardButton.tintColor = UIColor.blackColor()
         removeVerifyButton.tintColor = UIColor.blackColor()
         removeSignUpButton.tintColor = UIColor.blackColor()
         removeSignInButton.tintColor = UIColor.blackColor()
+        removeAllButton.tintColor = UIColor.whiteColor()
         
         removeOnboardButton.backgroundColor = UIColor.whiteColor()
         removeVerifyButton.backgroundColor = UIColor.whiteColor()
         removeSignUpButton.backgroundColor = UIColor.whiteColor()
         removeSignInButton.backgroundColor = UIColor.whiteColor()
+        removeAllButton.backgroundColor = UIColor.Flat.red
         
         removeOnboardButton.setTitle("Remove Onboarding", forState: UIControlState.Normal)
-        removeVerifyButton.setTitle("Remove Device Verify", forState: UIControlState.Normal)
-        removeSignUpButton.setTitle("Remove Sign Up", forState: UIControlState.Normal)
-        removeSignInButton.setTitle("Remove Session", forState: UIControlState.Normal)
+        removeVerifyButton.setTitle("Clear Device Verification", forState: UIControlState.Normal)
+        removeSignUpButton.setTitle("Delete Account", forState: UIControlState.Normal)
+        removeSignInButton.setTitle("Log Out", forState: UIControlState.Normal)
+        removeAllButton.setTitle("Remove All", forState: UIControlState.Normal)
         
         removeOnboardButton.addTarget(self, action: "removeOB:", forControlEvents:.TouchUpInside)
         removeVerifyButton.addTarget(self, action: "removeVD:", forControlEvents:.TouchUpInside)
         removeSignUpButton.addTarget(self, action: "removeSU:", forControlEvents:.TouchUpInside)
         removeSignInButton.addTarget(self, action: "removeSI:", forControlEvents:.TouchUpInside)
+        removeAllButton.addTarget(self, action: "removeAll:", forControlEvents:.TouchUpInside)
         
         self.view.addSubview(removeOnboardButton)
         self.view.addSubview(removeVerifyButton)
         self.view.addSubview(removeSignUpButton)
         self.view.addSubview(removeSignInButton)
+        self.view.addSubview(removeAllButton)
         
     }
     
@@ -113,6 +157,16 @@ class LandingVC: UIViewController, SignInVCDelegate, SignUpVCDelegate, OnboardVC
     
     func removeSI(sender:AnyObject?) {
         Defaults.remove(hasActiveSessionKey)
+        self.viewWillAppear(true)
+    }
+    
+    func removeAll(sender:AnyObject?) {
+        Defaults.remove(hasOnboardedKey)
+        Defaults.remove(hasVerifiedDeviceKey)
+        Defaults.remove(hasSignedUpKey)
+        Defaults.remove(hasActiveSessionKey)
+        PFUser.logOut()
+        Digits.sharedInstance().logOut()
         self.viewWillAppear(true)
     }
 

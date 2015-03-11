@@ -4,6 +4,7 @@
 
 import UIKit
 import TwitterKit
+import Parse
 
 protocol VerifyDeviceVCDelegate : class {
     func acceptData(data: AnyObject!)
@@ -13,14 +14,16 @@ class VerifyDeviceVC: UIViewController {
     
     var data : AnyObject?
     weak var delegate : VerifyDeviceVCDelegate?
+    var nextButton : UIButton?
+    var signOutButton : UIButton?
+    var verifyButton : UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpButtons()
+        setUpButton()
         setUpLabels()
         setUpLogo()
         view.backgroundColor = UIColor.Tennnis.backgroundBlue
-        
     }
     
     func setUpLabels() {
@@ -40,15 +43,48 @@ class VerifyDeviceVC: UIViewController {
         self.view.addSubview(logoImage)
     }
     
-    func setUpButtons() {
-        var button = UIButton(frame: CGRectMake(0, screenHeight - bHeight, screenWidth, bHeight))
-        button.titleLabel!.font = midFont
-        button.setTitleColor(UIColor.Tennnis.backgroundBlue, forState: UIControlState.Normal)
-        button.tintColor = UIColor.blackColor()
-        button.backgroundColor = UIColor.whiteColor()
-        button.setTitle("Verify Device", forState: UIControlState.Normal)
-        button.addTarget(self, action: "didTapButton:", forControlEvents:.TouchUpInside)
-        self.view.addSubview(button)
+    func setUpButton() {
+        verifyButton = UIButton(frame: CGRectMake(0, screenHeight - bHeight, screenWidth, bHeight))
+        verifyButton!.titleLabel!.font = midFont
+        verifyButton!.setTitleColor(UIColor.Tennnis.backgroundBlue, forState: UIControlState.Normal)
+        verifyButton!.tintColor = UIColor.blackColor()
+        verifyButton!.backgroundColor = UIColor.whiteColor()
+        verifyButton!.setTitle("Verify Device", forState: UIControlState.Normal)
+        verifyButton!.addTarget(self, action: "didTapButton:", forControlEvents:.TouchUpInside)
+        self.view.addSubview(verifyButton!)
+    }
+    
+    func setUpNext() {
+        nextButton = UIButton(frame: CGRectMake(0, screenHeight - bHeight, screenWidth, bHeight))
+        nextButton!.titleLabel!.font = midFont
+        nextButton!.setTitleColor(UIColor.Tennnis.backgroundBlue, forState: UIControlState.Normal)
+        nextButton!.tintColor = UIColor.blackColor()
+        nextButton!.backgroundColor = UIColor.whiteColor()
+        nextButton!.setTitle("Next", forState: UIControlState.Normal)
+        nextButton!.addTarget(self, action: "dismiss:", forControlEvents:.TouchUpInside)
+        self.view.addSubview(nextButton!)
+    }
+
+    
+    func hideButton(button: UIButton) {
+        button.hidden = true
+    }
+    
+    func showButton(button: UIButton) {
+        button.hidden = false
+    }
+
+    
+    func setUpSignOutButton() {
+        signOutButton = UIButton(frame: CGRectMake(0, screenHeight / 3, screenWidth, bHeight))
+        signOutButton!.titleLabel!.font = midFont
+        signOutButton!.setTitleColor(UIColor.Tennnis.backgroundBlue, forState: UIControlState.Normal)
+        signOutButton!.tintColor = UIColor.blackColor()
+        signOutButton!.backgroundColor = UIColor.whiteColor()
+        signOutButton!.setTitle("Drop Creds", forState: UIControlState.Normal)
+        signOutButton!.backgroundColor = UIColor.whiteColor()
+        signOutButton!.addTarget(self, action: "logOut:", forControlEvents:.TouchUpInside)
+        self.view.addSubview(signOutButton!)
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -80,14 +116,17 @@ class VerifyDeviceVC: UIViewController {
         digits.authenticateWithDigitsAppearance(digitsAppearance, viewController: self, title: "") { (session, error) in
             
             if error == nil {
+                self.hideButton(self.verifyButton!)
+                self.setUpSignOutButton()
+                self.setUpNext()
                 println(session.userID)
                 println(session.phoneNumber)
                 println(session.authToken)
                 println(session.authTokenSecret)
                 Defaults["digits_UserID"] = session.userID
-                Defaults["digits_UserID"] = session.phoneNumber
-                Defaults["digits_UserID"] = session.authToken
-                Defaults["digits_UserID"] = session.authTokenSecret
+                Defaults["digits_PhoneNumber"] = session.phoneNumber
+                Defaults["digits_AuthToken"] = session.authToken
+                Defaults["digits_AuthTokenSecret"] = session.authTokenSecret
             } else {
                 println(error)
             }
@@ -123,17 +162,15 @@ class VerifyDeviceVC: UIViewController {
 //        })
 //    }
     
-    func logout() {
-        Digits.sharedInstance().logOut()
+    func logOut(sender: AnyObject?) {
+        let digits = Digits.sharedInstance()
+        digits.logOut()
+        self.hideButton(self.nextButton!)
+        self.hideButton(self.signOutButton!)
+        self.showButton(self.verifyButton!)
     }
 
     func dismiss(sender:AnyObject?) {
-        
-        
-//        println(self.presentingViewController!)
-//        println(self.presentingViewController!.presentedViewController)
-//        var vc = self.delegate! as AnyObject as UIViewController
-//        println(vc.presentedViewController)
         
         // just proving it works
         // self.dismissViewControllerAnimated(true, completion: nil)

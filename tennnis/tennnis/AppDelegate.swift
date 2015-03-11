@@ -5,6 +5,7 @@
 import UIKit
 import Fabric
 import TwitterKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate : UIResponder, UIApplicationDelegate {
@@ -16,6 +17,9 @@ class AppDelegate : UIResponder, UIApplicationDelegate {
         
         // setup fabric, parse, and other 3rd party credentials
         Fabric.with([Twitter()])
+        Parse.setApplicationId("aKEweJVWoXDPFlAAmQ6oHe9VWwkO1JtYQBsefqox", clientKey: "FPEE33DhBbwqVbSElmajZQgFHNe7OANoX6VvCkdl")
+        PFUser.enableAutomaticUser()
+
         var mainVC = self.setupMainVC()
         
         window!.tintColor = UIColor.Flat.red
