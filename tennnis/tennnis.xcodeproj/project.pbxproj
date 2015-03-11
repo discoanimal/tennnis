@@ -22,7 +22,6 @@
 		A02293FC1AAEFFCC00EFCF60 /* Ionicons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02293F71AAEFFCC00EFCF60 /* Ionicons.swift */; };
 		A02293FD1AAEFFCC00EFCF60 /* Octicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02293F81AAEFFCC00EFCF60 /* Octicon.swift */; };
 		A03D20951AAE5AB600D1D2E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03D20941AAE5AB600D1D2E5 /* AppDelegate.swift */; };
-		A03D20971AAE5AB600D1D2E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03D20961AAE5AB600D1D2E5 /* ViewController.swift */; };
 		A03D209A1AAE5AB600D1D2E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03D20981AAE5AB600D1D2E5 /* Main.storyboard */; };
 		A03D209C1AAE5AB600D1D2E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A03D209B1AAE5AB600D1D2E5 /* Images.xcassets */; };
 		A03D209F1AAE5AB600D1D2E5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A03D209D1AAE5AB600D1D2E5 /* LaunchScreen.xib */; };
@@ -54,6 +53,16 @@
 		A0B969B71AAE9FD400AC2230 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B969B61AAE9FD400AC2230 /* UserDefaults.swift */; };
 		A0D1CC751AAF81890091DC9A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D1CC741AAF81890091DC9A /* libsqlite3.dylib */; };
 		A0D1CC771AAF819D0091DC9A /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D1CC761AAF819D0091DC9A /* libsqlite3.0.dylib */; };
+		A0D6F5611AB07DEE00BC5B78 /* BubbleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6F5601AB07DEE00BC5B78 /* BubbleColor.swift */; };
+		A0D6F5631AB07FCF00BC5B78 /* ContactBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6F5621AB07FCF00BC5B78 /* ContactBubble.swift */; };
+		A0D802E81AAFE2AA002BCAEF /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D802E71AAFE2AA002BCAEF /* Crashlytics.framework */; };
+		A0D802EA1AAFE781002BCAEF /* PlayersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D802E91AAFE781002BCAEF /* PlayersVC.swift */; };
+		A0D802F41AB005AB002BCAEF /* SwiftAddressBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D802F31AB005AB002BCAEF /* SwiftAddressBook.swift */; };
+		A0D802F61AB005C6002BCAEF /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D802F51AB005C6002BCAEF /* AddressBook.framework */; };
+		A0D802F81AB005D5002BCAEF /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D802F71AB005D5002BCAEF /* AddressBookUI.framework */; };
+		A0D802FA1AB006D2002BCAEF /* ContactPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D802F91AB006D2002BCAEF /* ContactPickerVC.swift */; };
+		A0D803001AB00BBF002BCAEF /* ContactPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D802FF1AB00BBF002BCAEF /* ContactPickerView.swift */; };
+		A0D803041AB00E52002BCAEF /* ContactPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D803031AB00E52002BCAEF /* ContactPickerCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +93,6 @@
 		A03D208F1AAE5AB600D1D2E5 /* tennnis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tennnis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A03D20931AAE5AB600D1D2E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A03D20941AAE5AB600D1D2E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A03D20961AAE5AB600D1D2E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A03D20991AAE5AB600D1D2E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A03D209B1AAE5AB600D1D2E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A03D209E1AAE5AB600D1D2E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -118,6 +126,16 @@
 		A0B969B61AAE9FD400AC2230 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		A0D1CC741AAF81890091DC9A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		A0D1CC761AAF819D0091DC9A /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		A0D6F5601AB07DEE00BC5B78 /* BubbleColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleColor.swift; sourceTree = "<group>"; };
+		A0D6F5621AB07FCF00BC5B78 /* ContactBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactBubble.swift; sourceTree = "<group>"; };
+		A0D802E71AAFE2AA002BCAEF /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		A0D802E91AAFE781002BCAEF /* PlayersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersVC.swift; sourceTree = "<group>"; };
+		A0D802F31AB005AB002BCAEF /* SwiftAddressBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftAddressBook.swift; sourceTree = "<group>"; };
+		A0D802F51AB005C6002BCAEF /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		A0D802F71AB005D5002BCAEF /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		A0D802F91AB006D2002BCAEF /* ContactPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactPickerVC.swift; sourceTree = "<group>"; };
+		A0D802FF1AB00BBF002BCAEF /* ContactPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactPickerView.swift; sourceTree = "<group>"; };
+		A0D803031AB00E52002BCAEF /* ContactPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactPickerCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +143,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0D802F81AB005D5002BCAEF /* AddressBookUI.framework in Frameworks */,
+				A0D802F61AB005C6002BCAEF /* AddressBook.framework in Frameworks */,
 				A0D1CC771AAF819D0091DC9A /* libsqlite3.0.dylib in Frameworks */,
 				A0D1CC751AAF81890091DC9A /* libsqlite3.dylib in Frameworks */,
+				A0D802E81AAFE2AA002BCAEF /* Crashlytics.framework in Frameworks */,
 				A03D20D91AAE72BA00D1D2E5 /* AudioToolbox.framework in Frameworks */,
 				A03D20D71AAE72AE00D1D2E5 /* Foundation.framework in Frameworks */,
 				A03D20D51AAE72A100D1D2E5 /* CoreGraphics.framework in Frameworks */,
@@ -179,6 +200,7 @@
 		A02293F31AAEFF6000EFCF60 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				A0D802F31AB005AB002BCAEF /* SwiftAddressBook.swift */,
 			);
 			name = Vendor;
 			sourceTree = "<group>";
@@ -222,8 +244,8 @@
 				A02293E71AAEFEEC00EFCF60 /* Resources */,
 				A0A194CD1AAE90CE0094CD37 /* Utilities */,
 				A03D20941AAE5AB600D1D2E5 /* AppDelegate.swift */,
-				A03D20961AAE5AB600D1D2E5 /* ViewController.swift */,
 				A03D20DA1AAE766100D1D2E5 /* LandingVC.swift */,
+				A0D802E91AAFE781002BCAEF /* PlayersVC.swift */,
 				A02293DD1AAEB2E300EFCF60 /* OnboardVC.swift */,
 				A02293E51AAEDBE100EFCF60 /* VerifyDeviceVC.swift */,
 				A02293E31AAED90900EFCF60 /* SignUpVC.swift */,
@@ -232,6 +254,11 @@
 				A03D209B1AAE5AB600D1D2E5 /* Images.xcassets */,
 				A03D209D1AAE5AB600D1D2E5 /* LaunchScreen.xib */,
 				A03D20921AAE5AB600D1D2E5 /* Supporting Files */,
+				A0D802F91AB006D2002BCAEF /* ContactPickerVC.swift */,
+				A0D802FF1AB00BBF002BCAEF /* ContactPickerView.swift */,
+				A0D803031AB00E52002BCAEF /* ContactPickerCell.swift */,
+				A0D6F5621AB07FCF00BC5B78 /* ContactBubble.swift */,
+				A0D6F5601AB07DEE00BC5B78 /* BubbleColor.swift */,
 			);
 			path = tennnis;
 			sourceTree = "<group>";
@@ -264,6 +291,9 @@
 		A03D20B51AAE620C00D1D2E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0D802F71AB005D5002BCAEF /* AddressBookUI.framework */,
+				A0D802F51AB005C6002BCAEF /* AddressBook.framework */,
+				A0D802E71AAFE2AA002BCAEF /* Crashlytics.framework */,
 				A0D1CC761AAF819D0091DC9A /* libsqlite3.0.dylib */,
 				A0D1CC741AAF81890091DC9A /* libsqlite3.dylib */,
 				A03D20D81AAE72BA00D1D2E5 /* AudioToolbox.framework */,
@@ -439,20 +469,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				A02293FD1AAEFFCC00EFCF60 /* Octicon.swift in Sources */,
+				A0D803041AB00E52002BCAEF /* ContactPickerCell.swift in Sources */,
 				A0A194C61AAE8E6A0094CD37 /* NavigationBar.swift in Sources */,
 				A02293FC1AAEFFCC00EFCF60 /* Ionicons.swift in Sources */,
+				A0D803001AB00BBF002BCAEF /* ContactPickerView.swift in Sources */,
 				A02293FA1AAEFFCC00EFCF60 /* GoogleIcon.swift in Sources */,
 				A0A194C81AAE8EFF0094CD37 /* Image.swift in Sources */,
-				A03D20971AAE5AB600D1D2E5 /* ViewController.swift in Sources */,
 				A02293E01AAEC19700EFCF60 /* Toolbar.swift in Sources */,
 				A02293FB1AAEFFCC00EFCF60 /* Iconic.swift in Sources */,
 				A03D20DB1AAE766100D1D2E5 /* LandingVC.swift in Sources */,
 				A02293E61AAEDBE100EFCF60 /* VerifyDeviceVC.swift in Sources */,
+				A0D802EA1AAFE781002BCAEF /* PlayersVC.swift in Sources */,
 				A03D20DD1AAE770100D1D2E5 /* SignInVC.swift in Sources */,
+				A0D6F5611AB07DEE00BC5B78 /* BubbleColor.swift in Sources */,
+				A0D802FA1AB006D2002BCAEF /* ContactPickerVC.swift in Sources */,
 				A0A194CC1AAE8F840094CD37 /* Color.swift in Sources */,
 				A0B969B71AAE9FD400AC2230 /* UserDefaults.swift in Sources */,
 				A0A194CA1AAE8F310094CD37 /* ImageView.swift in Sources */,
 				A02293F91AAEFFCC00EFCF60 /* FontAwesome.swift in Sources */,
+				A0D6F5631AB07FCF00BC5B78 /* ContactBubble.swift in Sources */,
+				A0D802F41AB005AB002BCAEF /* SwiftAddressBook.swift in Sources */,
 				A03D20951AAE5AB600D1D2E5 /* AppDelegate.swift in Sources */,
 				A02293E41AAED90900EFCF60 /* SignUpVC.swift in Sources */,
 				A02293DE1AAEB2E300EFCF60 /* OnboardVC.swift in Sources */,
@@ -579,6 +615,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -589,6 +626,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "tennnis/tennnis-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -597,6 +636,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -607,6 +647,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "tennnis/tennnis-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

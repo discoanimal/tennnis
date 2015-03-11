@@ -3,6 +3,7 @@
 //  Copyright (c) 2015 jlynch.co. All rights reserved.
 
 import UIKit
+import Fabric
 import Parse
 import TwitterKit
 import Foundation

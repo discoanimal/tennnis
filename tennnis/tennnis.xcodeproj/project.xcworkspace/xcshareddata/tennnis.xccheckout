@@ -5,13 +5,13 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>3F4E9637-B81F-4F7E-AD75-D9B5DD34B15E</string>
+	<string>B1924E39-01DD-4C5E-875B-709B361DC583</string>
 	<key>IDESourceControlProjectName</key>
 	<string>tennnis</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6D4A0C195D9E8172F13261178E86B8FA294876D9</key>
-		<string>https://github.com/discoanimal/tennnis</string>
+		<string>github.com:discoanimal/tennnis.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>tennnis/tennnis.xcodeproj</string>
@@ -21,7 +21,7 @@
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/discoanimal/tennnis</string>
+	<string>github.com:discoanimal/tennnis.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>

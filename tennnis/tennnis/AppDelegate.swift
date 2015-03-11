@@ -6,6 +6,8 @@ import UIKit
 import Fabric
 import TwitterKit
 import Parse
+import Crashlytics
+
 
 @UIApplicationMain
 class AppDelegate : UIResponder, UIApplicationDelegate {
@@ -16,7 +18,7 @@ class AppDelegate : UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         // setup fabric, parse, and other 3rd party credentials
-        Fabric.with([Twitter()])
+        Fabric.with([Twitter(), Crashlytics()])
         Parse.setApplicationId("aKEweJVWoXDPFlAAmQ6oHe9VWwkO1JtYQBsefqox", clientKey: "FPEE33DhBbwqVbSElmajZQgFHNe7OANoX6VvCkdl")
         PFUser.enableAutomaticUser()
 
@@ -33,7 +35,7 @@ class AppDelegate : UIResponder, UIApplicationDelegate {
     func setupMainVC() -> UITabBarController {
         // mainVC
         let firstV : UIViewController = LandingVC()
-        let secondV : UIViewController = LandingVC()
+        let secondV : UIViewController = ContactPickerVC()
         let thirdV : UIViewController = LandingVC()
         let forthV : UIViewController = LandingVC()
         let fifthV : UIViewController = LandingVC()
